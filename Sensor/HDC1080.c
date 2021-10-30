@@ -125,7 +125,7 @@ void hdc1080_read_humidity(double *humidity)
  	// readRegister(HDC1080_TEMPERATURE,data,2);
 	HAL_I2C_Master_Receive(&I2C_HANDLE,I2C_ADDRESS,data,2,1000); 
  	temp = (data[0] << 8 | data[1]);
- 	*temperature =  (temp / pow(2, 16)) * 100.0;
+ 	*humidity =  (temp / pow(2, 16)) * 100.0;
 }
 /**********************
 void heatUp(uint8_t seconds) {
